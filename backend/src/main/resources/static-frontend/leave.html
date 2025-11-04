@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Leave Applications</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Employee MS</h2>
+      <ul class="menu">
+        <li><i class="fa fa-tachometer-alt"></i> Dashboard</li>
+        <li><i class="fa fa-users"></i> Employee</li>
+        <li><i class="fa fa-building"></i> Department</li>
+        <li class="active"><i class="fa fa-calendar"></i> Leave</li>
+        <li><i class="fa fa-user-check"></i> Attendance</li>
+        <li><i class="fa fa-cog"></i> Settings</li>
+      </ul>
+    </aside>
+
+    <!-- Main Section -->
+    <main class="main-content">
+      <header class="header">
+        <span>Welcome Admin</span>
+        <a href="#" class="logout" onclick="logout()">Logout</a>
+      </header>
+
+      <section class="manage-section">
+        <div class="top-bar">
+          <h3>Manage Leave Applications</h3>
+        </div>
+
+        <div class="card">
+          <table class="leave-table">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Employee</th>
+                <th>Leave Type</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>John</td>
+                <td>Sick Leave</td>
+                <td>01/15/2023</td>
+                <td>01/16/2023</td>
+                <td><span class="status-approved">Approved</span></td>
+                <td>
+                  <button class="btn-view">View</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Mary</td>
+                <td>Vacation</td>
+                <td>02/10/2023</td>
+                <td>02/15/2023</td>
+                <td><span class="status-pending">Pending</span></td>
+                <td>
+                  <button class="btn-view">View</button>
+                  <button class="btn-approve">Approve</button>
+                  <button class="btn-reject">Reject</button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Steve</td>
+                <td>Personal</td>
+                <td>03/05/2023</td>
+                <td>03/07/2023</td>
+                <td><span class="status-rejected">Rejected</span></td>
+                <td>
+                  <button class="btn-view">View</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/leave.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2025-11-04T15:03:55.258+05:30  INFO 15556 --- [           main] com.emp.LeaveManagementApplication       : Starting LeaveManagementApplication v1.0.0 using Java 24.0.2 with PID 15556 (D:\CU\SEM 5\full stack\Employee Leave Management System\employee-leave-management-system\backend\target\employee-leave-system-1.0.0.jar started by aman in D:\CU\SEM 5\full stack\Employee Leave Management System\employee-leave-management-system\backend)
+2025-11-04T15:03:55.274+05:30  INFO 15556 --- [           main] com.emp.LeaveManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-11-04T15:03:57.188+05:30  INFO 15556 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-04T15:03:57.323+05:30  INFO 15556 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 5 JPA repository interfaces.
+2025-11-04T15:03:58.643+05:30  INFO 15556 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-11-04T15:03:58.679+05:30  INFO 15556 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-04T15:03:58.680+05:30  INFO 15556 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-11-04T15:03:58.759+05:30  INFO 15556 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-04T15:03:58.762+05:30  INFO 15556 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3323 ms
+2025-11-04T15:03:59.189+05:30  INFO 15556 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-04T15:03:59.434+05:30  INFO 15556 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-11-04T15:03:59.568+05:30  INFO 15556 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-04T15:04:00.154+05:30  INFO 15556 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-04T15:04:00.219+05:30  INFO 15556 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-04T15:04:00.614+05:30  INFO 15556 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@482a58c7
+2025-11-04T15:04:00.618+05:30  INFO 15556 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-04T15:04:02.144+05:30  INFO 15556 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-04T15:04:02.149+05:30  INFO 15556 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04T15:04:03.202+05:30  WARN 15556 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-04T15:04:03.865+05:30  INFO 15556 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7833407, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66acaa54, org.springframework.security.web.context.SecurityContextHolderFilter@6c92a59d, org.springframework.security.web.header.HeaderWriterFilter@9c40f43, org.springframework.web.filter.CorsFilter@60739eca, org.springframework.security.web.authentication.logout.LogoutFilter@5570ee6d, com.emp.config.JwtAuthenticationFilter@9ba167e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@49bc1f6c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67167f8f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@17873842, org.springframework.security.web.access.ExceptionTranslationFilter@344769b9, org.springframework.security.web.access.intercept.AuthorizationFilter@b0d4873]
+2025-11-04T15:04:04.378+05:30  INFO 15556 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+2025-11-04T15:04:04.404+05:30  INFO 15556 --- [           main] com.emp.LeaveManagementApplication       : Started LeaveManagementApplication in 11.062 seconds (process running for 13.059)
+Leave Management Application started on port 8080

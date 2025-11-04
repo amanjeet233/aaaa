@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EMS - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>EMS</h2>
+  <a class="active" href="index.html">Dashboard</a>
+  <a href="attendance.html">Attendance</a>
+  <a href="apply-leave.html">Apply Leave</a>
+  <a href="leave-history.html">Leave History</a>
+  <a href="#">Logout</a>
+</div>
+
+<div class="content">
+  <h2>Welcome <span class="emp-name">Aman</span></h2>
+
+  <div class="card">
+    <h3>My Info</h3><br>
+    Emp ID: <span class="emp-id">23bcs10270</span> <br>
+    Email: <span class="emp-email">23bcs10270</span> <br>
+    Department: <span class="emp-dept">CSE</span>
+  </div>
+
+  <div class="card">
+    <h3>Leave Balance</h3><br>
+    Total: <span class="leave-total">12</span> <br>
+    Casual: <span class="leave-casual">6</span> <br>
+    Sick: <span class="leave-sick">6</span>
+  </div>
+
+  <div class="card">
+    <h3>Today's Attendance</h3><br>
+    Status: <span class="today-status">-</span> <br>
+    In Time: <span class="today-in">-</span> <br><br>
+    <button onclick="markAttendance()">Mark Attendance</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

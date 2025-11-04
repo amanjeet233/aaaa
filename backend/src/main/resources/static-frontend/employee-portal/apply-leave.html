@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EMS - Apply Leave</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>EMS</h2>
+  <a href="index.html">Dashboard</a>
+  <a href="attendance.html">Attendance</a>
+  <a class="active" href="apply-leave.html">Apply Leave</a>
+  <a href="leave-history.html">Leave History</a>
+  <a href="#">Logout</a>
+</div>
+
+<div class="content">
+  <h2>Apply Leave</h2>
+  
+  <div class="card">
+    <label>Leave Type</label>
+    <select id="leaveType"><option>Casual</option><option>Sick</option></select><br><br>
+    <label>From Date</label>
+    <input type="date" id="fromDate"> <br><br>
+    <label>To Date</label>
+    <input type="date" id="toDate"> <br><br>
+    <label>Reason</label>
+    <textarea id="reason" placeholder="Reason"></textarea><br><br>
+    <button onclick="applyLeave()">Apply</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

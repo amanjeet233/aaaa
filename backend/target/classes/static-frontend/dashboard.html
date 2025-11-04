@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Management System Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Employee MS</h2>
+      <ul class="menu">
+        <li class="active"><a href="dashboard.html"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="employee.html"><i class="fa fa-users"></i> Employee</a></li>
+        <li><a href="department.html"><i class="fa fa-building"></i> Department</a></li>
+        <li><a href="leave.html"><i class="fa fa-calendar"></i> Leave</a></li>
+        <li><a href="attendance.html"><i class="fa fa-user-check"></i> Attendance</a></li>
+        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <header class="header">
+        <span id="welcomeMessage">Welcome Admin</span>
+        <a href="#" class="logout" onclick="logout()">Logout</a>
+      </header>
+
+      <!-- Dashboard Stats -->
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-info">
+            <div class="stat-title">Total Employees</div>
+            <div class="stat-value" id="dashTotalEmployees">-</div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-building"></i></div>
+          <div class="stat-info">
+            <div class="stat-title">Departments</div>
+            <div class="stat-value" id="dashTotalDepts">-</div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-clock"></i></div>
+          <div class="stat-info">
+            <div class="stat-title">Present Today</div>
+            <div class="stat-value" id="dashPresentToday">-</div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-calendar"></i></div>
+          <div class="stat-info">
+            <div class="stat-title">On Leave</div>
+            <div class="stat-value" id="dashOnLeave">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leave Summary -->
+      <div class="section-title">Leave Summary</div>
+      <div class="leave-summary">
+        <div class="leave-box">Applied<br/><span id="dashLeaveApplied">-</span></div>
+        <div class="leave-box">Pending<br/><span id="dashLeavePending">-</span></div>
+        <div class="leave-box">Approved<br/><span id="dashLeaveApproved">-</span></div>
+        <div class="leave-box">Rejected<br/><span id="dashLeaveRejected">-</span></div>
+      </div>
+
+      <!-- Recent Leaves -->
+      <div class="section-title">Recent Leave Applications</div>
+      <div class="recent-leaves card">
+        <table class="data-table" id="dashRecentLeaves">
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Department</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Will be populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <section class="dashboard">
+        <h3>Dashboard Overview</h3>
+        <div class="cards">
+          <div class="card">
+            <i class="fa fa-user-friends icon purple"></i>
+            <div>
+              <h4>Total Employees</h4>
+              <p id="totalEmployees">3</p>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa fa-building icon blue"></i>
+            <div>
+              <h4>Total Departments</h4>
+              <p id="totalDepartments">3</p>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa fa-sack-dollar icon gold"></i>
+            <div>
+              <h4>Monthly Pay</h4>
+              <p>$2500</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Leave Details</h3>
+        <div class="cards">
+          <div class="card small">
+            <i class="fa fa-file-alt icon red"></i>
+            <div>
+              <h4>Leave Applied</h4>
+              <p id="leaveApplied">4</p>
+            </div>
+          </div>
+          <div class="card small">
+            <i class="fa fa-hourglass-half icon orange"></i>
+            <div>
+              <h4>Leave Pending</h4>
+              <p id="leavePending">1</p>
+            </div>
+          </div>
+          <div class="card small">
+            <i class="fa fa-check-square icon green"></i>
+            <div>
+              <h4>Leave Approved</h4>
+              <p id="leaveApproved">2</p>
+            </div>
+          </div>
+          <div class="card small">
+            <i class="fa fa-times-circle icon pink"></i>
+            <div>
+              <h4>Leave Rejected</h4>
+              <p id="leaveRejected">1</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="employees" class="card">
+        <div class="section-head">
+          <h2>Manage Employees</h2>
+          <button id="showAdd">Add Employee</button>
+        </div>
+        <div id="addForm" class="hidden">
+          <h3>Add / Edit Employee</h3>
+          <input id="empId" placeholder="Emp ID" />
+          <input id="name" placeholder="Name" />
+          <input id="email" placeholder="Email" />
+          <input id="password" placeholder="Password" />
+          <input id="dept" placeholder="Department" />
+          <select id="role">
+            <option value="employee">Employee</option>
+            <option value="manager">Manager</option>
+          </select>
+          <button id="saveEmp">Save</button>
+          <button id="cancelAdd">Cancel</button>
+          <p id="addMsg" class="error"></p>
+        </div>
+
+        <table id="empTable" class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Emp ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Dept</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section id="leaves" class="card">
+        <h2>Manage Leave Applications</h2>
+        <table id="leaveTable" class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Employee</th>
+              <th>Leave Type</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/manager.js"></script>
+</body>
+</html>

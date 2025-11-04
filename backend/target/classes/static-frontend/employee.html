@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Employee</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Employee MS</h2>
+      <ul class="menu">
+        <li><i class="fa fa-tachometer-alt"></i> Dashboard</li>
+        <li class="active"><i class="fa fa-users"></i> Employee</li>
+        <li><i class="fa fa-building"></i> Department</li>
+        <li><i class="fa fa-calendar"></i> Leave</li>
+        <li><i class="fa fa-user-check"></i> Attendance</li>
+        <li><i class="fa fa-cog"></i> Settings</li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <header class="header">
+        <span>Welcome Admin</span>
+        <a href="#" class="logout" onclick="logout()">Logout</a>
+      </header>
+
+      <section class="manage-employee">
+        <div class="top-bar">
+          <h3>Manage Employee</h3>
+          <button class="add-btn"><i class="fa fa-plus"></i> Add New Employee</button>
+        </div>
+
+        <div class="search-box">
+          <input type="text" placeholder="Search By Emp Name" />
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>DOB</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>John</td>
+              <td>HR</td>
+              <td>01/04/1990</td>
+              <td>
+                <button class="view">View</button>
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Mary</td>
+              <td>Logistics</td>
+              <td>01/05/2000</td>
+              <td>
+                <button class="view">View</button>
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Steve</td>
+              <td>IT</td>
+              <td>01/06/1995</td>
+              <td>
+                <button class="view">View</button>
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/employee.js"></script>
+</body>
+</html>
+    <h2>EMS</h2>
+    <nav>
+      <a href="employee.html" class="active">My Dashboard</a>
+      <a href="index.html" onclick="logout()">Logout</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <header>
+      <h1>Welcome <span id="empName"></span></h1>
+    </header>
+    <section class="card grid-3">
+      <div>
+        <h3>My Info</h3>
+        <p>Emp ID: <strong id="empIdView"></strong></p>
+        <p>Email: <strong id="empEmailView"></strong></p>
+        <p>Department: <strong id="empDeptView"></strong></p>
+      </div>
+
+      <div>
+        <h3>Leave Balance</h3>
+        <p>Total Balance: <strong id="leaveTotal">-</strong></p>
+        <p>Casual: <strong id="casualBal">-</strong></p>
+        <p>Sick: <strong id="sickBal">-</strong></p>
+      </div>
+
+      <div>
+        <h3>Today's Attendance</h3>
+        <p>Status: <strong id="todayStatus">-</strong></p>
+        <p>In Time: <strong id="todayIn">-</strong></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Apply for Leave</h2>
+      <div class="small-grid">
+        <select id="leaveType">
+          <option value="CASUAL">Casual</option>
+          <option value="SICK">Sick</option>
+          <option value="VACATION">Vacation</option>
+        </select>
+        <input type="date" id="fromDate" />
+        <input type="date" id="toDate" />
+        <textarea id="leaveReason" placeholder="Reason" rows="3"></textarea>
+        <button id="applyLeaveBtn">Apply</button>
+      </div>
+      <p id="applyMsg" class="error"></p>
+    </section>
+
+    <section class="card">
+      <h2>My Leave History</h2>
+      <table id="myLeaveTable" class="data-table">
+        <thead><tr><th>#</th><th>Type</th><th>From</th><th>To</th><th>Days</th><th>Status</th><th>Remark</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="js/employee.js"></script>
+</body>
+</html>
